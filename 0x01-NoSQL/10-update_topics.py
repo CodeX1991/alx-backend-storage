@@ -9,8 +9,7 @@ def update_topics(mongo_collection, name, topics):
         name: school name to work with
         topics: list of strings
     """
-    updateResult = mongo_collection.update_one(
+    updateResult = mongo_collection.update_many(
             {"name": name},
-            {"$set": {"topics": topics}},
-            upsert=True)
+            {"$set": {"topics": topics}})
     return updateResult
