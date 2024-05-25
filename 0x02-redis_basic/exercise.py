@@ -15,7 +15,7 @@ class Cache:
     def __init__(self):
         """Initializing class variable"""
         self._redis = redis.Redis()
-        self._redis.flushdb
+        self._redis.flushdb()
 
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """Return data in string format"""
